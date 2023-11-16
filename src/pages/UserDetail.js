@@ -1,4 +1,7 @@
-import React from 'react'
+import Loading from '@/components/Loading';
+import React from 'react';
+import { useState, useEffect } from "react";
+
 
 export default function UserDetail() {
     return (
