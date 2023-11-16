@@ -9,6 +9,8 @@ export default function UserDetail() {
     const [users, setUsers] = useState([]);
     const [user, setUser] = useState('');
 
+    const [search, setSearch] = useState('');
+
     const fetchUsers = async () => {
         const res = await fetch('/api/users');
         const data = await res.json();
@@ -26,6 +28,10 @@ export default function UserDetail() {
         )
     }
 
+    const filteredUser = users.filter(item =>
+        item.username.toLowerCase().includes(search.toLowerCase())
+    );
+
     return (
         <>
             <div class="relative overflow-x-auto shadow-md sm:rounded-lg m-5 w-5/6 mx-auto">
@@ -37,7 +43,7 @@ export default function UserDetail() {
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
                             </svg>
                         </div>
-                        <input type="text" id="table-search-users" class="block p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg w-80 bg-gray-50 focus:ring-green-500 focus:border-green-500" placeholder="Search for users" />
+                        <input type="text" id="s_users" value={search} onChange={(e) => setSearch(e.target.value)} class="block p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg w-80 bg-gray-50 focus:ring-green-500 focus:border-green-500" placeholder="Search for users" />
                     </div>
                 </div>
                 <table class="w-full text-sm text-left rtl:text-right text-gray-50">
@@ -53,6 +59,38 @@ export default function UserDetail() {
 
                     <tbody>
                         {
+                            filteredUser.map(u => {
+                                return (
+                                    <tr class="bg-white border-b hover:bg-gray-50">
+                                        <td class="px-7 py-4 text-gray-500">
+                                            {u.id}
+                                        </td>
+                                        <th scope="row" class="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap">
+                                            <img class="w-10 h-10 rounded-full" src="user.png" alt="" />
+                                            <div class="ps-3">
+                                                <div class="text-base font-semibold">{u.username}</div>
+                                                <div class="font-normal text-gray-500">{u.email}</div>
+                                            </div>
+                                        </th>
+                                        <td class="px-6 py-4 text-gray-950">{u.phone}</td>
+                                        <td class="px-6 py-4">
+                                            <div class="flex items-center text-gray-800">{u.creationDate}</div>
+                                        </td>
+                                        <td class="px-6 py-4">
+                                            <a href="#" class="font-medium text-green-600  hover:underline">Edit user</a>
+                                        </td>
+                                    </tr>
+                                )
+                            })
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </>
+    )
+}
+
+{/* {
                             users.map(user => {
                                 return (
                                     <tr class="bg-white border-b hover:bg-gray-50">
@@ -76,10 +114,4 @@ export default function UserDetail() {
                                     </tr>
                                 )
                             })
-                        }
-                    </tbody>
-                </table>
-            </div>
-        </>
-    )
-}
+                        } */}
