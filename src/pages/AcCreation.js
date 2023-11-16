@@ -13,7 +13,6 @@ export default function () {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Dummy request handling
         console.log('Submitted:', { username, password });
     };
 
@@ -92,15 +91,6 @@ export default function () {
                     >
                         Sign in
                     </button>
-                    {/* <div className="text-sm font-medium text-gray-500 dark:text-gray-300">
-                        Not registered?{" "}
-                        <a
-                            href="#"
-                            className="text-blue-700 hover:underline dark:text-blue-500"
-                        >
-                            Create account
-                        </a>
-                    </div> */}
                 </form>
             </div>
         </>

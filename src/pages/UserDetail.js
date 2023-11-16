@@ -89,29 +89,3 @@ export default function UserDetail() {
         </>
     )
 }
-
-{/* {
-                            users.map(user => {
-                                return (
-                                    <tr class="bg-white border-b hover:bg-gray-50">
-                                        <td class="px-7 py-4 text-gray-500">
-                                            {user.id}
-                                        </td>
-                                        <th scope="row" class="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap">
-                                            <img class="w-10 h-10 rounded-full" src="user.png" alt="" />
-                                            <div class="ps-3">
-                                                <div class="text-base font-semibold">{user.username}</div>
-                                                <div class="font-normal text-gray-500">{user.email}</div>
-                                            </div>
-                                        </th>
-                                        <td class="px-6 py-4 text-gray-950">{user.phone}</td>
-                                        <td class="px-6 py-4">
-                                            <div class="flex items-center text-gray-800">{user.creationDate}</div>
-                                        </td>
-                                        <td class="px-6 py-4">
-                                            <a href="#" class="font-medium text-green-600  hover:underline">Edit user</a>
-                                        </td>
-                                    </tr>
-                                )
-                            })
-                        } */}
