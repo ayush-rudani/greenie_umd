@@ -4,6 +4,28 @@ import { useState, useEffect } from "react";
 
 
 export default function UserDetail() {
+    const [isLoading, setIsLoading] = useState(true);
+
+    const [users, setUsers] = useState([]);
+    const [user, setUser] = useState('');
+
+    const fetchUsers = async () => {
+        const res = await fetch('/api/users');
+        const data = await res.json();
+        setUsers(data);
+    }
+
+    useEffect(() => {
+        fetchUsers();
+        setIsLoading(false);
+    }, []);
+
+    if (isLoading) {
+        return (
+            <Loading />
+        )
+    }
+
     return (
         <>
             <div class="relative overflow-x-auto shadow-md sm:rounded-lg m-5 w-5/6 mx-auto">
@@ -30,25 +52,31 @@ export default function UserDetail() {
                     </thead>
 
                     <tbody>
-                        <tr class="bg-white border-b hover:bg-gray-50">
-                            <td class="px-7 py-4 text-gray-500">
-                                1
-                            </td>
-                            <th scope="row" class="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap">
-                                <img class="w-10 h-10 rounded-full" src="user.png" alt="" />
-                                <div class="ps-3">
-                                    <div class="text-base font-semibold">Ayush Rudani</div>
-                                    <div class="font-normal text-gray-500">ayush_rudani@google.com</div>
-                                </div>
-                            </th>
-                            <td class="px-6 py-4 text-gray-950">1234567890</td>
-                            <td class="px-6 py-4">
-                                <div class="flex items-center text-gray-800">1-Dec-2020</div>
-                            </td>
-                            <td class="px-6 py-4">
-                                <a href="#" class="font-medium text-green-600  hover:underline">Edit user</a>
-                            </td>
-                        </tr>
+                        {
+                            users.map(user => {
+                                return (
+                                    <tr class="bg-white border-b hover:bg-gray-50">
+                                        <td class="px-7 py-4 text-gray-500">
+                                            {user.id}
+                                        </td>
+                                        <th scope="row" class="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap">
+                                            <img class="w-10 h-10 rounded-full" src="user.png" alt="" />
+                                            <div class="ps-3">
+                                                <div class="text-base font-semibold">{user.username}</div>
+                                                <div class="font-normal text-gray-500">{user.email}</div>
+                                            </div>
+                                        </th>
+                                        <td class="px-6 py-4 text-gray-950">{user.phone}</td>
+                                        <td class="px-6 py-4">
+                                            <div class="flex items-center text-gray-800">{user.creationDate}</div>
+                                        </td>
+                                        <td class="px-6 py-4">
+                                            <a href="#" class="font-medium text-green-600  hover:underline">Edit user</a>
+                                        </td>
+                                    </tr>
+                                )
+                            })
+                        }
                     </tbody>
                 </table>
             </div>
