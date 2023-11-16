@@ -5,13 +5,10 @@ import { useState, useEffect } from "react";
 
 export default function UserDetail() {
     const [isLoading, setIsLoading] = useState(true);
-
     const [users, setUsers] = useState([]);
     const [user, setUser] = useState('');
-
     const [selectedUser, setSelectedUser] = useState(null);
     const [isModalOpen, setIsModalOpen] = useState(false);
-
     const [search, setSearch] = useState('');
 
     const fetchUsers = async () => {
@@ -38,14 +35,13 @@ export default function UserDetail() {
     function handleUserSelection(user) {
         setSelectedUser(user);
         setIsModalOpen(true);
-        console.log(user);
     }
 
     return (
         <>
             <div className="relative overflow-x-auto shadow-md sm:rounded-lg m-5 w-5/6 mx-auto">
                 <div className="flex items-center justify-between flex-column flex-wrap md:flex-row space-y-4 md:space-y-0 pb-4 bg-white  m-2">
-                    <label htmlFor="table-search" className="sr-only">Search</label>
+                    <label htmlFor="table-search">Search</label>
                     <div className="relative">
                         <div className="absolute inset-y-0 rtl:inset-r-0 start-0 flex items-center ps-3 pointer-events-none">
                             <svg className="w-4 h-4 text-gray-500" aria-hidden="true" fill="none" viewBox="0 0 20 20">
@@ -95,6 +91,55 @@ export default function UserDetail() {
                     </tbody>
                 </table>
             </div>
+
+            {isModalOpen &&
+                (
+                    <>
+                        <div id="crud-modal" class="fixed flex items-center justify-center backdrop-blur z-50  w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+                            <div class="relative p-4 w-full max-w-md max-h-full">
+                                <div class="relative bg-white rounded-lg shadow">
+
+                                    <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t">
+                                        <h3 class="text-lg font-semibold text-gray-900 ">
+                                            User Details
+                                        </h3>
+                                        <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center" onClick={() => setIsModalOpen(false)}>
+                                            <svg class="w-3 h-3" fill="none" viewBox="0 0 14 14">
+                                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                                            </svg>
+                                        </button>
+                                    </div>
+
+                                    <form action="#" class="p-4 md:p-5">
+                                        <div class="grid gap-4 mb-4 grid-cols-2">
+                                            <div class="col-span-2">
+                                                <div className="flex justify-between">
+                                                    <label htmlFor="name" class="block mb-2 text-sm font-medium text-gray-900">Name</label>
+                                                    <label htmlFor="name" class="block mb-2 text-sm font-medium text-gray-900">Email</label>
+                                                </div>
+                                                <div className="flex justify-between"><div>{selectedUser.username}</div> <div> {selectedUser.email}</div></div>
+                                            </div>
+                                            <div class="col-span-2 sm:col-span-1">
+                                                <label htmlFor="price" class="block mb-2 text-sm font-medium text-gray-900 ">Phone</label>
+                                                {selectedUser.phone}
+                                            </div>
+                                            <div class="col-span-2 sm:col-span-1">
+                                                <label htmlFor="category" class="block mb-2 text-sm font-medium text-gray-900">Creation Date</label>
+                                                {selectedUser.creationDate}
+                                            </div>
+
+                                        </div>
+                                        <button type="submit" class="text-white inline-flex items-center bg-green-500 hover:bg-green-600 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+                                            Generate Report
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </>
+                )
+            }
+
         </>
     )
 }

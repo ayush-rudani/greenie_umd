@@ -18,15 +18,15 @@ export default function () {
 
     return (
         <>
-            <div className="w-full max-w-sm p-4 mx-auto sm:p-6 md:p-8 mt-5  bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            <div className="w-full max-w-sm p-4 mx-auto sm:p-6 md:p-8 mt-5  bg-white border border-gray-200 rounded-lg shadow">
                 <form className="space-y-6" action="#">
-                    <h5 className="text-xl font-medium text-gray-900 dark:text-white">
+                    <h5 className="text-xl font-medium text-gray-900 ">
                         Sign In
                     </h5>
                     <div>
                         <label
                             htmlFor="email"
-                            className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                            className="block mb-2 text-sm font-medium text-gray-900 "
                         >
                             Username
                         </label>
@@ -36,7 +36,7 @@ export default function () {
                             type="username"
                             name="username"
                             id="username"
-                            className="w-full p-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                            className="w-full p-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block"
                             placeholder="username"
                             required
                         />
@@ -44,7 +44,7 @@ export default function () {
                     <div>
                         <label
                             htmlFor="password"
-                            className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                            className="block mb-2 text-sm font-medium text-gray-900 "
                         >
                             Password
                         </label>
@@ -55,7 +55,7 @@ export default function () {
                             name="password"
                             id="password"
                             placeholder="••••••••••"
-                            className="w-full p-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                            className="w-full p-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block"
                             required
                         />
                     </div>
@@ -66,20 +66,20 @@ export default function () {
                                     id="remember"
                                     type="checkbox"
                                     value=""
-                                    className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-green-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-green-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800"
+                                    className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-green-300"
                                     required
                                 />
                             </div>
                             <label
                                 htmlFor="remember"
-                                className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                                className="ml-2 text-sm font-medium text-gray-900"
                             >
                                 Remember me
                             </label>
                         </div>
                         <a
                             href="#"
-                            className="ml-auto text-sm text-green-700 hover:underline dark:text-green-400"
+                            className="ml-auto text-sm text-green-700 hover:underline"
                         >
                             Lost Password?
                         </a>
@@ -87,7 +87,7 @@ export default function () {
                     <button
                         onClick={handleSubmit}
                         type="submit"
-                        className="w-full text-white bg-green-400 hover:bg-green-500 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-600 dark:focus:ring-green-500"
+                        className="w-full text-white bg-green-400 hover:bg-green-500 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
                     >
                         Sign in
                     </button>
