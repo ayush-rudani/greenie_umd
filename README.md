@@ -40,3 +40,26 @@ Ensure you have the following installed on your machine:
     ```
 
 Open your browser and go to http://localhost:3000 to view the application.
+
+
+<br>
+
+<hr>
+
+<br>
+
+#### Dashboard
+![dashboard](./images/1.png)
+
+#### User Details Page
+![User Details](./images/2.png)
+
+#### Account Creation Page
+![Account Creation](./images/3.png)
+
+#### User Details with search functionality
+![](./images/4.png)
+
+#### Popup/Modal with a button to generate a report for the selected user.
+![](./images/5.png)
+![](./images/6.png)
