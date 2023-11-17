@@ -8,6 +8,9 @@ import Dashboard from "./dashboard";
 import NavBar from "@/components/NavBar";
 import Loading from "@/components/Loading";
 
+export const metadata = {
+    title: 'Dashboard',
+}
 
 export default function Home() {
     return (
