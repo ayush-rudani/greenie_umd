@@ -18,7 +18,6 @@ export default function SignIn() {
 
     return (
         <>
-            
             <div className="w-full max-w-sm p-4 mx-auto sm:p-6 md:p-8 mt-5  bg-white border border-gray-200 rounded-lg shadow">
                 <form className="space-y-6" action="#">
                     <h5 className="text-xl font-medium text-gray-900 ">

@@ -1,14 +1,15 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { Metadata } from 'next';
+
 import AcCreation from "./AcCreation";
 import UserDetail from "./UserDetail";
+import Dashboard from "./dashboard";
 import NavBar from "@/components/NavBar";
 import Loading from "@/components/Loading";
-import Dashboard from "./dashboard";
 
 
-function Home() {
-    const router = useRouter();
+export default function Home() {
     return (
         <>
             <Dashboard />
@@ -17,7 +18,6 @@ function Home() {
             {/* <UserDetail /> */}
             {/* <Loading /> */}
         </>
-    );
+    )
 }
 
-export default Home;

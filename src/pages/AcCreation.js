@@ -1,5 +1,9 @@
-import Head from "next/head";
+import { useState } from "react";
 import SignIn from '@/components/SignIn';
+
+export const metadata = {
+    title: 'Create Account',
+}
 
 export default function AcCreation() {
 
@@ -19,9 +23,6 @@ export default function AcCreation() {
 
     return (
         <>
-            <head>
-                <title>Account Creation</title>
-            </head>
             <SignIn />
         </>
 

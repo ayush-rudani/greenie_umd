@@ -30,7 +30,7 @@ export default function () {
                 </div>
                 <div className="flex">
                     <Link href="/AcCreation"
-                        className="block group text-md px-4 py-2 rounded text-slate-700 ml-2 font-bold hover:text-green-400 mt-4 lg:mt-0">Sign In
+                        className="block group text-md px-4 py-2 rounded text-slate-700 ml-2 font-bold hover:text-green-400 mt-4 lg:mt-0">Create Account
                         <div className="bg-green-400 h-[2px] w-0 group-hover:w-full transition-all duration-500"></div>
                     </Link>
                     {/* 
