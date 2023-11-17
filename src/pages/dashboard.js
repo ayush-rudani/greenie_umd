@@ -1,11 +1,14 @@
-import React from 'react'
+import React from 'react';
+import Head from "next/head";
 import AcCreation from "./AcCreation";
 import UserDetail from "./UserDetail";
-import Loading from "@/components/Loading";
 
 export default function Dashboard() {
     return (
         <>
+            <head>
+                <title>Dashboard</title>
+            </head>
             <div style={{ display: 'flex', flexDirection: 'row' }}>
                 <div style={{ width: '60%' }} className="border-r-4 border-indigo-500">
                     <UserDetail />

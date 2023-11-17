@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import NavBar from "@/components/NavBar";
+import Head from "next/head";
 
-export default function () {
+export default function AcCreation() {
 
     const [value, setValue] = useState({
         username: "",
@@ -18,8 +18,10 @@ export default function () {
     };
 
     return (
-        <div>
-            {/* <NavBar /> */}
+        <>
+            <head>
+                <title>Account Creation</title>
+            </head>
             <div className="w-full max-w-sm p-4 mx-auto sm:p-6 md:p-8 mt-5  bg-white border border-gray-200 rounded-lg shadow">
                 <form className="space-y-6" action="#">
                     <h5 className="text-xl font-medium text-gray-900 ">
@@ -95,7 +97,7 @@ export default function () {
                     </button>
                 </form>
             </div>
-        </div>
+        </>
     );
 };
 

@@ -1,7 +1,7 @@
-import Loading from '@/components/Loading';
 import React from 'react';
+import Head from "next/head";
+import Loading from '@/components/Loading';
 import { useState, useEffect } from "react";
-import NavBar from "@/components/NavBar";
 
 export default function UserDetail() {
     const [isLoading, setIsLoading] = useState(true);
@@ -39,7 +39,9 @@ export default function UserDetail() {
 
     return (
         <div>
-            {/* <NavBar /> */}
+            <head>
+                <title>User Details</title>
+            </head>
             <div className="relative overflow-x-auto shadow-md sm:rounded-lg m-5 w-5/6 mx-auto">
                 <div className="flex items-center justify-between flex-column flex-wrap md:flex-row space-y-4 md:space-y-0 pb-4 bg-white  m-2">
                     <label htmlFor="table-search">User Details</label>
@@ -83,7 +85,7 @@ export default function UserDetail() {
                                             <div className="flex items-center text-gray-800">{u.creationDate}</div>
                                         </td>
                                         <td className="px-6 py-4">
-                                            <div href="#" className="font-medium text-green-600  hover:underline hover:cursor-pointer" onClick={() => handleUserSelection(u)}>Edit user</div>
+                                            <div href="#" className="font-medium text-green-600  hover:underline hover:cursor-pointer" onClick={() => handleUserSelection(u)}>Edit</div>
                                         </td>
                                     </tr>
                                 )
@@ -106,12 +108,12 @@ export default function UserDetail() {
                                         </h3>
                                         <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center" onClick={() => setIsModalOpen(false)}>
                                             <svg class="w-3 h-3" fill="none" viewBox="0 0 14 14">
-                                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                                                <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
                                             </svg>
                                         </button>
                                     </div>
 
-                                    <form action="#" class="p-4 md:p-5">
+                                    <form action="" class="p-4 md:p-5">
                                         <div class="grid gap-4 mb-4 grid-cols-2">
                                             <div class="col-span-2">
                                                 <div className="flex justify-between">
@@ -130,7 +132,7 @@ export default function UserDetail() {
                                             </div>
 
                                         </div>
-                                        <button type="submit" class="text-white inline-flex items-center bg-green-500 hover:bg-green-600 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+                                        <button class="text-white inline-flex items-center bg-green-500 hover:bg-green-600 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
                                             Generate Report
                                         </button>
                                     </form>
