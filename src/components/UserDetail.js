@@ -1,7 +1,7 @@
 import Loading from '@/components/Loading';
 import React from 'react';
 import { useState, useEffect } from "react";
-
+import NavBar from "@/components/NavBar";
 
 export default function UserDetail() {
     const [isLoading, setIsLoading] = useState(true);
@@ -38,10 +38,11 @@ export default function UserDetail() {
     }
 
     return (
-        <>
+        <div>
+            {/* <NavBar /> */}
             <div className="relative overflow-x-auto shadow-md sm:rounded-lg m-5 w-5/6 mx-auto">
                 <div className="flex items-center justify-between flex-column flex-wrap md:flex-row space-y-4 md:space-y-0 pb-4 bg-white  m-2">
-                    <label htmlFor="table-search">Search</label>
+                    <label htmlFor="table-search">User Details</label>
                     <div className="relative">
                         <div className="absolute inset-y-0 rtl:inset-r-0 start-0 flex items-center ps-3 pointer-events-none">
                             <svg className="w-4 h-4 text-gray-500" aria-hidden="true" fill="none" viewBox="0 0 20 20">
@@ -140,6 +141,6 @@ export default function UserDetail() {
                 )
             }
 
-        </>
+        </div>
     )
 }
