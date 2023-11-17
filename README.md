@@ -12,8 +12,8 @@ Follow these instructions to get a copy of the project up and running on your lo
 
 Ensure you have the following installed on your machine:
 
-- Node.js (at least version 14.x)
-- npm (Node Package Manager) or Yarn
+- Node.js (version 20.x)
+- npm (Node Package Manager) or Yarn (version 10.x)
 
 
 ### Installation
