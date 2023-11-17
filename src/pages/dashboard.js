@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from "next/head";
-import AcCreation from "./AcCreation";
 import UserDetail from "./UserDetail";
+import SignIn from '@/components/SignIn';
 
 export default function Dashboard() {
     return (
@@ -14,7 +14,7 @@ export default function Dashboard() {
                     <UserDetail />
                 </div>
                 <div style={{ width: '40%' }}>
-                    <AcCreation />
+                    <SignIn />
                 </div>
             </div>
         </>
